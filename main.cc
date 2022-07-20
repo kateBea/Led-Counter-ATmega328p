@@ -1,5 +1,7 @@
 // Simple led counter program
 
+#define F_CPU 16000000UL    //define CPU clock cylces in Herz for usage on _delay_ms()
+
 #include <avr/io.h>
 #include <util/delay.h>
 #include <stdint.h>
