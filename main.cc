@@ -4,12 +4,10 @@
 #include <util/delay.h>
 #include <stdint.h>
 
-#define F_CPU 16000000UL
-
 int main()
 {
     // config I/O ports
-    PORTB   = 0B11111111;
+    PORTB   = 0B00000000;
     DDRB    = 0B00000000;
 
 
@@ -22,12 +20,12 @@ int main()
         ++counter;
 
         // turn on led according to counter value
-        DDRB = static_cast<uint8_t> (counter);
+        PORTB = static_cast<uint8_t> (counter);
         _delay_ms(delay_value);
 
         if (counter == limit) 
         {
-            DDRB    = 0b00000000;
+            PORTB    = 0b00000000;
             counter = 0;
         }
     }
