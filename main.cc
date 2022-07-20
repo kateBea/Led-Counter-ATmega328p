@@ -10,7 +10,7 @@ int main()
 {
     // config I/O ports
     PORTB   = 0B00000000;
-    DDRB    = 0B00000000;
+    DDRB    = 0B11111111;
 
 
     uint32_t            counter {  };
