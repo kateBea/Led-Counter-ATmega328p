@@ -12,7 +12,7 @@ int main()
 
 
     uint32_t            counter {  };
-    constexpr uint32_t  limit  { 256 }
+    constexpr uint32_t  limit  { 256 };
     constexpr uint16_t  delay_value { 500 };
 
     while (true)
