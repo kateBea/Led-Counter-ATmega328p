@@ -9,26 +9,23 @@
 int main()
 {
     // config I/O ports
-    PORTB   = 0B00000000;
-    DDRB    = 0B11111111;
+    PORTB   = 0B00000000; // clear PORTB pins on startup
+    DDRB    = 0B11111111; // setup PORTB pins as output
 
 
-    uint32_t            counter {  };
-    constexpr uint32_t  limit  { 256 };
-    constexpr uint16_t  delay_value { 500 };
+    uint8_t             counter {  };
+
+    // delay amount for usage in _delay_ms()
+    constexpr uint16_t  delay_value { 250 };
 
     while (true)
     {
         ++counter;
 
         // turn on led according to counter value
-        PORTB = static_cast<uint8_t> (counter);
-        _delay_ms(delay_value);
+        PORTB = counter;
 
-        if (counter == limit) 
-        {
-            PORTB    = 0b00000000;
-            counter = 0;
-        }
+        // delay in ms
+        _delay_ms(delay_value);
     }
 }
