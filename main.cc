@@ -22,7 +22,7 @@ int main()
     {
         ++counter;
 
-        // turn on led according to counter value
+        // turn on leds according to counter value
         PORTB = counter;
 
         // delay in ms
